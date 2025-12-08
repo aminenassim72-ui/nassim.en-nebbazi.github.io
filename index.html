@@ -1,0 +1,153 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Prénom Nom — Recherche en Mathématiques</title>
+<meta name="description" content="Doctorant en mathématiques — optimisation stochastique, SGD, Heavy-Ball. CV, publications et contact." />
+<style>
+  :root{
+    --accent:#155a9a;
+    --muted:#555;
+    --maxw:980px;
+    --pad:18px;
+    font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+  }
+  *{box-sizing:border-box}
+  body{margin:0;color:#111;background:#fff;line-height:1.5}
+  header{background:linear-gradient(180deg, rgba(21,90,154,0.95), rgba(21,90,154,0.85)); color:#fff;padding:48px 16px}
+  .container{max-width:var(--maxw);margin:0 auto;padding:0 var(--pad)}
+  .hero{display:flex;gap:20px;align-items:center;flex-wrap:wrap}
+  .hero .photo{width:110px;height:110px;border-radius:10px;background:#e9eef6;display:flex;align-items:center;justify-content:center;font-weight:600;color:var(--accent)}
+  h1{margin:0;font-size:1.6rem}
+  p.lead{margin:8px 0 0;color: #e9f2ff}
+  nav{margin-top:18px}
+  nav a{color:#e9f2ff;text-decoration:none;margin-right:12px;font-weight:500}
+  main{padding:28px 0}
+  section{padding:28px 0;border-bottom:1px solid #f0f0f0}
+  h2{margin:0 0 10px;font-size:1.1rem;color:var(--accent)}
+  .two-col{display:grid;grid-template-columns:1fr 320px;gap:24px}
+  .card{background:#fff;padding:16px;border-radius:10px;box-shadow:0 6px 18px rgba(0,0,0,0.06)}
+  ul.simple{padding-left:1rem;color:var(--muted)}
+  .pub{margin-bottom:10px}
+  footer{padding:18px 0;color:var(--muted);font-size:0.9rem}
+  .btn{display:inline-block;padding:8px 12px;border-radius:8px;background:var(--accent);color:#fff;text-decoration:none;font-weight:600}
+  @media (max-width:880px){
+    .two-col{grid-template-columns:1fr; }
+    .hero{justify-content:center;text-align:center}
+    nav a{display:inline-block;margin:8px 6px}
+  }
+  /* small table-like CV */
+  .meta{display:flex;gap:8px;flex-wrap:wrap}
+  .meta span{background:#f3f7fb;padding:6px 10px;border-radius:999px;font-size:0.85rem;color:var(--muted)}
+  /* smooth scroll fallback */
+  html{scroll-behavior:smooth}
+</style>
+</head>
+<body>
+<header>
+  <div class="container">
+    <div class="hero">
+      <div style="flex:1">
+        <div style="display:flex;align-items:center;gap:14px;flex-wrap:wrap">
+          <div style="min-width:0">
+            <h1>Prénom Nom</h1>
+            <div class="meta">
+              <span>Doctorant · Université X</span>
+              <span>Optimisation stochastique</span>
+              <span>Heavy-Ball & SGD</span>
+            </div>
+            <p class="lead">Je travaille sur l'analyse non-asymptotique des algorithmes d'optimisation stochastique et les liens avec des EDO/EDPS.</p>
+          </div>
+          <div class="photo" aria-hidden="true">Photo</div>
+        </div>
+        <nav>
+          <a href="#apropos">À propos</a>
+          <a href="#recherche">Recherche</a>
+          <a href="#pubs">Publications</a>
+          <a href="#enseignement">Enseignement</a>
+          <a href="#contact">Contact</a>
+        </nav>
+      </div>
+    </div>
+  </div>
+</header>
+
+<main class="container">
+  <section id="apropos" class="card">
+    <h2>À propos</h2>
+    <p>Doctorant en mathématiques à <strong>Université X</strong>, sous la direction de Prénom Nom. Intérêts : optimisation stochastique, probabilités appliquées, analyse numérique.</p>
+    <p>Formation : Master Mathématiques Fondamentales — Université Y (année). Diplôme d'ingénierie mathématique — Université Z (année).</p>
+  </section>
+
+  <section id="recherche" class="card">
+    <h2>Recherche</h2>
+    <div class="two-col">
+      <div>
+        <p>Axes :</p>
+        <ul class="simple">
+          <li>Analyse non-asymptotique du SGD et Heavy-Ball.</li>
+          <li>Modèles continus (EDO/EDP) et liens avec schémas numériques.</li>
+          <li>Simulations Monte-Carlo et erreurs fortes/faibles.</li>
+        </ul>
+
+        <h3 style="margin-top:14px;margin-bottom:8px;">Projets en cours</h3>
+        <ul class="simple">
+          <li>Article : bornes exponentiellement décroissantes pour Heavy-Ball (en préparation).</li>
+          <li>Comparaison numérique de schémas stochastiques — code disponible sur GitHub.</li>
+        </ul>
+      </div>
+
+      <aside>
+        <div class="card">
+          <h3 style="margin-top:0">Mots-clés</h3>
+          <div style="display:flex;flex-wrap:wrap;gap:8px">
+            <span style="background:#eef6ff;padding:6px 10px;border-radius:8px">SGD</span>
+            <span style="background:#eef6ff;padding:6px 10px;border-radius:8px">Heavy-Ball</span>
+            <span style="background:#eef6ff;padding:6px 10px;border-radius:8px">EDO</span>
+            <span style="background:#eef6ff;padding:6px 10px;border-radius:8px">Monte-Carlo</span>
+          </div>
+        </div>
+      </aside>
+    </div>
+  </section>
+
+  <section id="pubs" class="card">
+    <h2>Publications & prépublications</h2>
+    <div class="pub">
+      <strong>Titre de l'article (année)</strong><br>
+      Prénom Nom, Autre Auteur. <a href="#" class="btn" style="display:inline-block;margin-top:8px">PDF / arXiv</a>
+    </div>
+    <div class="pub">
+      <strong>Prépublication (en préparation)</strong><br>
+      Description courte — lien sera ajouté.
+    </div>
+  </section>
+
+  <section id="enseignement" class="card">
+    <h2>Enseignement</h2>
+    <p>Expérience : TD L1 — Calcul, TD M1 — Probabilités appliquées. Supports et exercices disponibles sur demande.</p>
+    <p><a href="#" class="btn">Télécharger CV (PDF)</a></p>
+  </section>
+
+  <section id="contact" class="card">
+    <h2>Contact</h2>
+    <p>Email : <a href="mailto:ton.email@univ.fr">ton.email@univ.fr</a></p>
+    <p>Liens : <a href="#">Google Scholar</a> · <a href="#">arXiv</a> · <a href="#">GitHub</a></p>
+    <p style="margin-top:8px;color:var(--muted)">Ville, Pays · Laboratoire</p>
+  </section>
+</main>
+
+<footer class="container">
+  <div style="max-width:var(--maxw);margin:0 auto;padding:8px 18px">
+    © <span id="year"></span> Prénom Nom — Recherche en mathématiques
+  </div>
+</footer>
+
+<script>
+  // petit JS non critique : année courante
+  try{document.getElementById('year').textContent=(new Date()).getFullYear()}catch(e){}
+</script>
+</body>
+</html>
+
