@@ -3,151 +3,300 @@
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width,initial-scale=1" />
-<title>Prénom Nom — Recherche en Mathématiques</title>
-<meta name="description" content="Doctorant en mathématiques — optimisation stochastique, SGD, Heavy-Ball. CV, publications et contact." />
+<title>Nassim En-Nebbazi — Doctorant en Mathématiques</title>
 <style>
-  :root{
-    --accent:#155a9a;
-    --muted:#555;
-    --maxw:980px;
-    --pad:18px;
-    font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+  * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
   }
-  *{box-sizing:border-box}
-  body{margin:0;color:#111;background:#fff;line-height:1.5}
-  header{background:linear-gradient(180deg, rgba(21,90,154,0.95), rgba(21,90,154,0.85)); color:#fff;padding:48px 16px}
-  .container{max-width:var(--maxw);margin:0 auto;padding:0 var(--pad)}
-  .hero{display:flex;gap:20px;align-items:center;flex-wrap:wrap}
-  .hero .photo{width:110px;height:110px;border-radius:10px;background:#e9eef6;display:flex;align-items:center;justify-content:center;font-weight:600;color:var(--accent)}
-  h1{margin:0;font-size:1.6rem}
-  p.lead{margin:8px 0 0;color: #e9f2ff}
-  nav{margin-top:18px}
-  nav a{color:#e9f2ff;text-decoration:none;margin-right:12px;font-weight:500}
-  main{padding:28px 0}
-  section{padding:28px 0;border-bottom:1px solid #f0f0f0}
-  h2{margin:0 0 10px;font-size:1.1rem;color:var(--accent)}
-  .two-col{display:grid;grid-template-columns:1fr 320px;gap:24px}
-  .card{background:#fff;padding:16px;border-radius:10px;box-shadow:0 6px 18px rgba(0,0,0,0.06)}
-  ul.simple{padding-left:1rem;color:var(--muted)}
-  .pub{margin-bottom:10px}
-  footer{padding:18px 0;color:var(--muted);font-size:0.9rem}
-  .btn{display:inline-block;padding:8px 12px;border-radius:8px;background:var(--accent);color:#fff;text-decoration:none;font-weight:600}
-  @media (max-width:880px){
-    .two-col{grid-template-columns:1fr; }
-    .hero{justify-content:center;text-align:center}
-    nav a{display:inline-block;margin:8px 6px}
+  
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+    line-height: 1.6;
+    color: #2c3e50;
+    background: #f8f9fa;
   }
-  /* small table-like CV */
-  .meta{display:flex;gap:8px;flex-wrap:wrap}
-  .meta span{background:#f3f7fb;padding:6px 10px;border-radius:999px;font-size:0.85rem;color:var(--muted)}
-  /* smooth scroll fallback */
-  html{scroll-behavior:smooth}
+  
+  header {
+    background: linear-gradient(135deg, #155a9a 0%, #1e7bc4 100%);
+    color: #fff;
+    padding: 60px 20px 40px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  }
+  
+  .header-content {
+    max-width: 1100px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    gap: 40px;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  
+  .photo {
+    width: 140px;
+    height: 140px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 4px solid rgba(255,255,255,0.3);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+    background: #fff;
+  }
+  
+  .header-text {
+    flex: 1;
+    min-width: 280px;
+    text-align: center;
+  }
+  
+  .header-text h1 {
+    font-size: 2.5rem;
+    margin-bottom: 8px;
+    font-weight: 700;
+  }
+  
+  .header-text .subtitle {
+    font-size: 1.2rem;
+    opacity: 0.95;
+    font-weight: 300;
+  }
+  
+  nav {
+    width: 100%;
+    margin-top: 30px;
+    text-align: center;
+    padding-top: 20px;
+    border-top: 1px solid rgba(255,255,255,0.2);
+  }
+  
+  nav a {
+    color: #fff;
+    text-decoration: none;
+    margin: 0 16px;
+    font-weight: 500;
+    font-size: 1rem;
+    padding: 8px 12px;
+    border-radius: 6px;
+    transition: all 0.3s ease;
+    display: inline-block;
+  }
+  
+  nav a:hover {
+    background: rgba(255,255,255,0.15);
+    transform: translateY(-2px);
+  }
+  
+  main {
+    max-width: 1100px;
+    margin: 40px auto;
+    padding: 0 20px;
+  }
+  
+  .content-card {
+    background: #fff;
+    border-radius: 12px;
+    padding: 40px;
+    margin-bottom: 30px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+    transition: box-shadow 0.3s ease;
+  }
+  
+  .content-card:hover {
+    box-shadow: 0 4px 16px rgba(0,0,0,0.12);
+  }
+  
+  h2 {
+    color: #155a9a;
+    font-size: 1.8rem;
+    margin-bottom: 20px;
+    padding-bottom: 12px;
+    border-bottom: 3px solid #e8f0f7;
+    font-weight: 600;
+  }
+  
+  p {
+    margin-bottom: 16px;
+    color: #4a5568;
+    font-size: 1.05rem;
+  }
+  
+  a {
+    color: #155a9a;
+    text-decoration: none;
+    transition: color 0.2s ease;
+    font-weight: 500;
+  }
+  
+  a:hover {
+    color: #1e7bc4;
+    text-decoration: underline;
+  }
+  
+  ul {
+    margin-left: 24px;
+    margin-top: 16px;
+  }
+  
+  ul li {
+    margin-bottom: 12px;
+    color: #4a5568;
+    line-height: 1.7;
+  }
+  
+  .cv-link {
+    display: inline-block;
+    padding: 12px 24px;
+    background: #155a9a;
+    color: #fff !important;
+    border-radius: 8px;
+    font-weight: 600;
+    text-decoration: none;
+    margin-top: 12px;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 6px rgba(21,90,154,0.3);
+  }
+  
+  .cv-link:hover {
+    background: #1e7bc4;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(21,90,154,0.4);
+    text-decoration: none;
+  }
+  
+  .contact-list {
+    list-style: none;
+    margin-left: 0;
+  }
+  
+  .contact-list li {
+    padding: 12px 0;
+    border-bottom: 1px solid #e8f0f7;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+  
+  .contact-list li:last-child {
+    border-bottom: none;
+  }
+  
+  .contact-icon {
+    width: 24px;
+    height: 24px;
+    color: #155a9a;
+    flex-shrink: 0;
+  }
+  
+  footer {
+    text-align: center;
+    color: #718096;
+    padding: 30px 20px;
+    font-size: 0.95rem;
+    border-top: 1px solid #e2e8f0;
+    background: #fff;
+    margin-top: 40px;
+  }
+  
+  @media (max-width: 768px) {
+    .header-content {
+      flex-direction: column;
+      text-align: center;
+    }
+    
+    .header-text h1 {
+      font-size: 2rem;
+    }
+    
+    nav a {
+      margin: 8px;
+      font-size: 0.95rem;
+    }
+    
+    .content-card {
+      padding: 24px;
+    }
+    
+    h2 {
+      font-size: 1.5rem;
+    }
+  }
 </style>
 </head>
 <body>
 <header>
-  <div class="container">
-    <div class="hero">
-      <div style="flex:1">
-        <div style="display:flex;align-items:center;gap:14px;flex-wrap:wrap">
-          <div style="min-width:0">
-            <h1>Prénom Nom</h1>
-            <div class="meta">
-              <span>Doctorant · Université X</span>
-              <span>Optimisation stochastique</span>
-              <span>Heavy-Ball & SGD</span>
-            </div>
-            <p class="lead">Je travaille sur l'analyse non-asymptotique des algorithmes d'optimisation stochastique et les liens avec des EDO/EDPS.</p>
-          </div>
-          <div class="photo" aria-hidden="true">Photo</div>
-        </div>
-        <nav>
-          <a href="#apropos">À propos</a>
-          <a href="#recherche">Recherche</a>
-          <a href="#pubs">Publications</a>
-          <a href="#enseignement">Enseignement</a>
-          <a href="#contact">Contact</a>
-        </nav>
-      </div>
+  <div class="header-content">
+    <img src="164585(3)-modified(1).png" alt="Photo de Nassim En-Nebbazi" class="photo">
+    <div class="header-text">
+      <h1>Nassim En-Nebbazi</h1>
+      <div class="subtitle">Doctorant en Mathématiques</div>
     </div>
   </div>
+  <nav>
+    <a href="index.html">Accueil</a>
+    <a href="Cursus.html">Cursus</a>
+    <a href="Publications.html">Publications</a>
+    <a href="Enseignement.html">Enseignement</a>
+    <a href="Divers.html">Divers</a>
+  </nav>
 </header>
 
-<main class="container">
-  <section id="apropos" class="card">
+<main>
+  <section class="content-card">
     <h2>À propos</h2>
-    <p>Doctorant en mathématiques à <strong>Université X</strong>, sous la direction de Prénom Nom. Intérêts : optimisation stochastique, probabilités appliquées, analyse numérique.</p>
-    <p>Formation : Master Mathématiques Fondamentales — Université Y (année). Diplôme d'ingénierie mathématique — Université Z (année).</p>
+    <p>Doctorant en mathématiques au <a href="https://lma-umr5142.univ-pau.fr/fr/index.html" target="_blank">Laboratoire de Mathématiques et de leurs Applications de Pau</a> (LMAP) dans l'équipe <a href="https://lma-umr5142.univ-pau.fr/fr/organisation/equipes-de-recherche/analyse-geometrie-et-applications.html" target="_blank">Analyse, Géométrie et Applications</a>, sous la direction de <a href="https://brehier.pages.math.cnrs.fr/page-personnelle-c-e-brehier/recherche.html" target="_blank">Charles-Édouard Bréhier</a> et <a href="https://mdambrin.perso.univ-pau.fr/" target="_blank">Marc Dambrine</a>.</p>
+    <p><strong>Intérêts de recherche :</strong> Schémas numériques stochastiques, Équations différentielles stochastiques & Équations aux dérivées partielles stochastiques, Équations modifiées.</p>
   </section>
-
-  <section id="recherche" class="card">
+  
+  <section class="content-card">
     <h2>Recherche</h2>
-    <div class="two-col">
-      <div>
-        <p>Axes :</p>
-        <ul class="simple">
-          <li>Analyse non-asymptotique du SGD et Heavy-Ball.</li>
-          <li>Modèles continus (EDO/EDP) et liens avec schémas numériques.</li>
-          <li>Simulations Monte-Carlo et erreurs fortes/faibles.</li>
-        </ul>
-
-        <h3 style="margin-top:14px;margin-bottom:8px;">Projets en cours</h3>
-        <ul class="simple">
-          <li>Article : bornes exponentiellement décroissantes pour Heavy-Ball (en préparation).</li>
-          <li>Comparaison numérique de schémas stochastiques — code disponible sur GitHub.</li>
-        </ul>
-      </div>
-
-      <aside>
-        <div class="card">
-          <h3 style="margin-top:0">Mots-clés</h3>
-          <div style="display:flex;flex-wrap:wrap;gap:8px">
-            <span style="background:#eef6ff;padding:6px 10px;border-radius:8px">SGD</span>
-            <span style="background:#eef6ff;padding:6px 10px;border-radius:8px">Heavy-Ball</span>
-            <span style="background:#eef6ff;padding:6px 10px;border-radius:8px">EDO</span>
-            <span style="background:#eef6ff;padding:6px 10px;border-radius:8px">Monte-Carlo</span>
-          </div>
-        </div>
-      </aside>
-    </div>
+    <p>Mes recherches portent sur les thématiques suivantes :</p>
+    <ul>
+      <li>Étude de schémas numériques pour les équations différentielles stochastiques et équations aux dérivées partielles stochastiques (appliquées à l'optimisation) : Analyse d'erreur en temps long.</li>
+      <li>Étude asymptotique d'équations différentielles stochastiques modifiées et équations aux dérivées partielles stochastiques modifiées.</li>
+      <li>Analyse des équations de Kolmogorov en dimension finie et infinie pour l'analyse d'erreur faible.</li>
+    </ul>
   </section>
 
-  <section id="pubs" class="card">
-    <h2>Publications & prépublications</h2>
-    <div class="pub">
-      <strong>Titre de l'article (année)</strong><br>
-      Prénom Nom, Autre Auteur. <a href="#" class="btn" style="display:inline-block;margin-top:8px">PDF / arXiv</a>
-    </div>
-    <div class="pub">
-      <strong>Prépublication (en préparation)</strong><br>
-      Description courte — lien sera ajouté.
-    </div>
+  <section class="content-card">
+    <h2>Curriculum Vitae</h2>
+    <p>Vous pouvez consulter mon CV complet en cliquant sur le lien ci-dessous :</p>
+    <a href="CV for Researchers.pdf" target="_blank" class="cv-link">Télécharger mon CV</a>
   </section>
-
-  <section id="enseignement" class="card">
-    <h2>Enseignement</h2>
-    <p>Expérience : TD L1 — Calcul, TD M1 — Probabilités appliquées. Supports et exercices disponibles sur demande.</p>
-    <p><a href="#" class="btn">Télécharger CV (PDF)</a></p>
-  </section>
-
-  <section id="contact" class="card">
+  
+  <section class="content-card">
     <h2>Contact</h2>
-    <p>Email : <a href="mailto:ton.email@univ.fr">ton.email@univ.fr</a></p>
-    <p>Liens : <a href="#">Google Scholar</a> · <a href="#">arXiv</a> · <a href="#">GitHub</a></p>
-    <p style="margin-top:8px;color:var(--muted)">Ville, Pays · Laboratoire</p>
+    <ul class="contact-list">
+      <li>
+        <svg class="contact-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
+        </svg>
+        <span><strong>Email :</strong> <a href="mailto:nassim.en-nebbazi@univ-pau.fr">nassim.en-nebbazi@univ-pau.fr</a></span>
+      </li>
+      <li>
+        <svg class="contact-icon" fill="currentColor" viewBox="0 0 24 24">
+          <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"></path>
+        </svg>
+        <span><strong>LinkedIn :</strong> <a href="https://www.linkedin.com/in/nassim-en-nebbazi-a0b400244/" target="_blank">Nassim En-Nebbazi</a></span>
+      </li>
+      <li>
+        <svg class="contact-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path>
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path>
+        </svg>
+        <span><strong>Bureau :</strong> Bâtiment IPRA 2, Bureau 120 - Université de Pau et des Pays de l'Adour</span>
+      </li>
+    </ul>
   </section>
 </main>
 
-<footer class="container">
-  <div style="max-width:var(--maxw);margin:0 auto;padding:8px 18px">
-    © <span id="year"></span> Prénom Nom — Recherche en mathématiques
-  </div>
+<footer>
+  © <span id="year"></span> Nassim En-Nebbazi — Doctorant en mathématiques
 </footer>
 
 <script>
-  // petit JS non critique : année courante
-  try{document.getElementById('year').textContent=(new Date()).getFullYear()}catch(e){}
+  document.getElementById('year').textContent = new Date().getFullYear();
 </script>
 </body>
 </html>
-
