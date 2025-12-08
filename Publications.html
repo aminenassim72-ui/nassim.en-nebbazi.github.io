@@ -1,303 +1,254 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="fr">
 <head>
-<meta charset="utf-8" />
-<meta name="viewport" content="width=device-width,initial-scale=1" />
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Publications — Nassim En-Nebbazi</title>
 <style>
   * {
-    box-sizing: border-box;
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
   }
-  
+
   body {
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 14pt;
     line-height: 1.6;
-    color: #2c3e50;
-    background: #f8f9fa;
+    color: #000;
+    background: #fff;
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 40px 20px;
   }
-  
-  header {
-    background: linear-gradient(135deg, #155a9a 0%, #1e7bc4 100%);
-    color: #fff;
-    padding: 60px 20px 40px;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-    text-align: center;
+
+  h1 {
+    font-size: 28pt;
+    font-weight: normal;
+    margin-bottom: 5px;
   }
-  
-  header h1 {
-    font-size: 2.5rem;
-    margin-bottom: 8px;
-    font-weight: 700;
+
+  .subtitle {
+    font-size: 16pt;
+    font-style: italic;
+    margin-bottom: 20px;
+    color: #333;
   }
-  
-  header .subtitle {
-    font-size: 1.2rem;
-    opacity: 0.95;
-    font-weight: 300;
-  }
-  
+
   nav {
-    margin-top: 30px;
-    padding-top: 20px;
-    border-top: 1px solid rgba(255,255,255,0.2);
+    margin: 30px 0;
+    padding: 15px 0;
+    border-top: 1px solid #000;
+    border-bottom: 1px solid #000;
   }
-  
+
   nav a {
-    color: #fff;
+    color: #00e;
     text-decoration: none;
-    margin: 0 16px;
-    font-weight: 500;
-    font-size: 1rem;
-    padding: 8px 12px;
-    border-radius: 6px;
-    transition: all 0.3s ease;
-    display: inline-block;
+    margin-right: 20px;
   }
-  
+
+  nav a:visited {
+    color: #551a8b;
+  }
+
   nav a:hover {
-    background: rgba(255,255,255,0.15);
-    transform: translateY(-2px);
-  }
-  
-  main {
-    max-width: 1100px;
-    margin: 40px auto;
-    padding: 0 20px;
-  }
-  
-  .content-card {
-    background: #fff;
-    border-radius: 12px;
-    padding: 40px;
-    margin-bottom: 30px;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
-    transition: box-shadow 0.3s ease;
-  }
-  
-  .content-card:hover {
-    box-shadow: 0 4px 16px rgba(0,0,0,0.12);
-  }
-  
-  h2 {
-    color: #155a9a;
-    font-size: 1.8rem;
-    margin-bottom: 35px;
-    padding-bottom: 12px;
-    border-bottom: 3px solid #e8f0f7;
-    font-weight: 600;
-  }
-  
-  table {
-    width: 100%;
-    border-collapse: separate;
-    border-spacing: 0 16px;
-  }
-  
-  tr {
-    background: #fff;
-    transition: all 0.3s ease;
-  }
-  
-  tr:hover {
-    background: #f8fafc;
-  }
-  
-  td {
-    padding: 20px;
-    vertical-align: top;
-  }
-  
-  td:first-child {
-    width: 80px;
-    font-weight: 700;
-    color: #155a9a;
-    font-size: 0.95rem;
-    border-right: 3px solid #e8f0f7;
-    text-align: center;
-  }
-  
-  .pub-title {
-    font-size: 1.1rem;
-    font-weight: 600;
-    color: #2c3e50;
-    margin-bottom: 8px;
-    line-height: 1.4;
-  }
-  
-  .pub-title a {
-    color: #155a9a;
-    text-decoration: none;
-    transition: color 0.2s ease;
-  }
-  
-  .pub-title a:hover {
-    color: #1e7bc4;
     text-decoration: underline;
   }
-  
-  .pub-authors {
-    color: #64748b;
-    font-size: 0.95rem;
-    margin-top: 8px;
+
+  h2 {
+    font-size: 18pt;
+    font-weight: bold;
+    margin-top: 40px;
+    margin-bottom: 15px;
   }
-  
+
+  .pub-list {
+    list-style: none;
+    padding-left: 0;
+  }
+
+  .pub-list li {
+    margin-bottom: 25px;
+  }
+
+  .year {
+    font-weight: bold;
+    margin-bottom: 5px;
+  }
+
+  .pub-title {
+    font-weight: bold;
+    margin-bottom: 5px;
+  }
+
+  .pub-title a {
+    color: #00e;
+    text-decoration: none;
+  }
+
+  .pub-title a:visited {
+    color: #551a8b;
+  }
+
+  .pub-title a:hover {
+    text-decoration: underline;
+  }
+
+  .pub-authors {
+    font-style: italic;
+    margin-bottom: 8px;
+  }
+
   .pub-status {
     display: inline-block;
-    background: #e8f0f7;
-    color: #155a9a;
-    padding: 4px 10px;
-    border-radius: 4px;
-    font-size: 0.85rem;
-    font-weight: 600;
+    font-size: 11pt;
+    color: #666;
+    font-style: italic;
+    margin-bottom: 5px;
+  }
+
+  .toggle-abstract {
+    cursor: pointer;
+    color: #00e;
+    text-decoration: none;
+    font-size: 11pt;
+    user-select: none;
+  }
+
+  .toggle-abstract:hover {
+    text-decoration: underline;
+  }
+
+  .abstract {
+    display: none;
     margin-top: 8px;
+    margin-left: 20px;
+    font-size: 12pt;
+    text-align: justify;
+    color: #333;
   }
-  
+
   footer {
+    margin-top: 50px;
+    padding-top: 20px;
+    border-top: 1px solid #ccc;
+    font-size: 12pt;
+    color: #666;
     text-align: center;
-    color: #718096;
-    padding: 30px 20px;
-    font-size: 0.95rem;
-    border-top: 1px solid #e2e8f0;
-    background: #fff;
-    margin-top: 40px;
   }
-  
-  @media (max-width: 768px) {
-    header h1 {
-      font-size: 2rem;
+
+  @media (max-width: 600px) {
+    body {
+      padding: 20px 15px;
     }
-    
+
+    h1 {
+      font-size: 24pt;
+    }
+
     nav a {
-      margin: 8px;
-      font-size: 0.95rem;
-    }
-    
-    .content-card {
-      padding: 24px;
-    }
-    
-    h2 {
-      font-size: 1.5rem;
-    }
-    
-    table {
-      border-spacing: 0 8px;
-    }
-    
-    tr {
-      display: block;
-      margin-bottom: 24px;
-      border: 1px solid #e8f0f7;
-      border-radius: 8px;
-      overflow: hidden;
-    }
-    
-    td {
-      display: block;
-      width: 100% !important;
-      padding: 16px;
-    }
-    
-    td:first-child {
-      border-right: none;
-      border-bottom: 2px solid #e8f0f7;
-      background: #f8fafc;
-      text-align: left;
+      display: inline-block;
+      margin-bottom: 10px;
     }
   }
 </style>
 </head>
 <body>
-<header>
-  <h1>Nassim En-Nebbazi</h1>
-  <div class="subtitle">Doctorant en Mathématiques</div>
-  <nav>
-    <a href="index.html">Accueil</a>
-    <a href="Cursus.html">Cursus</a>
-    <a href="Publications.html">Publications</a>
-    <a href="Enseignement.html">Enseignement</a>
-    <a href="Divers.html">Divers</a>
-  </nav>
-</header>
 
-<main>
-  <section class="content-card">
-    <h2>Articles</h2>
-    
-    <table>
-      <tr>
-        <td>2025</td>
-        <td>
-          <div class="pub-title">
-            <a href="https://univ-pau.hal.science/hal-05401291" target="_blank">
-              First order modified equations and error analysis for stochastic Heavy–Ball schemes
-            </a>
-          </div>
-          <div class="pub-authors">En-Nebbazi Nassim</div>
-        </td>
-      </tr>
-      
-      <tr>
-        <td>2025</td>
-        <td>
-          <div class="pub-title">
-            <a href="https://hal.science/LMA-PAU/hal-04962485v1" target="_blank">
-              Modified equations and error analysis for a semi-implicit stochastic optimization scheme
-            </a>
-          </div>
-          <div class="pub-authors">Bréhier Charles-Édouard, Dambrine Marc et En-Nebbazi Nassim</div>
-        </td>
-      </tr>
-      
-      <tr>
-        <td>2024</td>
-        <td>
-          <div class="pub-title">
-            <a href="https://univ-pau.hal.science/LMA-PAU/hal-04773810v1" target="_blank">
-              Asymptotic error analysis for stochastic gradient optimization schemes with first and second order modified equations
-            </a>
-          </div>
-          <div class="pub-authors">Bréhier Charles-Édouard, Dambrine Marc et En-Nebbazi Nassim</div>
-        </td>
-      </tr>
-    </table>
-  </section>
-  
-  <section class="content-card">
-    <h2>Articles en cours</h2>
-    
-    <table>
-      <tr>
-        <td><div class="pub-status">En prép.</div></td>
-        <td>
-          <div class="pub-title">
-            Second order modified equations and error analysis for stochastic Heavy–Ball schemes
-          </div>
-          <div class="pub-authors">En-Nebbazi Nassim</div>
-        </td>
-      </tr>
-      
-      <tr>
-        <td><div class="pub-status">En prép.</div></td>
-        <td>
-          <div class="pub-title">
-            Error analysis for stochastic PDE schemes using modified equations
-          </div>
-          <div class="pub-authors">En-Nebbazi Nassim, Urbonas Matas</div>
-        </td>
-      </tr>
-    </table>
-  </section>
-</main>
+<h1>Nassim En-Nebbazi</h1>
+<div class="subtitle">Doctorant en Mathématiques</div>
+
+<nav>
+  <a href="index.html">Accueil</a>
+  <a href="Cursus.html">Cursus</a>
+  <a href="Publications.html">Publications</a>
+  <a href="Enseignement.html">Enseignement</a>
+  <a href="Divers.html">Divers</a>
+</nav>
+
+<h2>Articles publiés</h2>
+
+<ul class="pub-list">
+  <li>
+    <div class="year">2025</div>
+    <div class="pub-title">
+      <a href="https://univ-pau.hal.science/hal-05401291" target="_blank">
+        First order modified equations and error analysis for stochastic Heavy–Ball schemes
+      </a>
+    </div>
+    <div class="pub-authors">En-Nebbazi Nassim</div>
+    <span class="toggle-abstract" onclick="toggleAbstract(this)">[abstract]</span>
+    <div class="abstract">
+      We consider a class of stochastic Heavy--Ball optimization schemes. Assuming that the objective function is strongly convex, we prove weak error estimate which is uniform in time for the error between the solution of the numerical scheme, and the solution of continuous-time modified (or high-resolution) differential equations at first order, with respect to the time-step size. At first order, the modified equation is deterministic. We go beyond existing results where the error estimates have been considered only on finite time intervals and were not uniform in time. This allows us to then provide a rigorous complexity analysis of the method in the large time and small time-step size regimes. We provide numerical experiments to illustrate the convergence result.
+    </div>
+  </li>
+
+  <li>
+    <div class="year">2025</div>
+    <div class="pub-title">
+      <a href="https://hal.science/LMA-PAU/hal-04962485v1" target="_blank">
+        Modified equations and error analysis for a semi-implicit stochastic optimization scheme
+      </a>
+    </div>
+    <div class="pub-authors">Bréhier Charles-Édouard, Dambrine Marc et En-Nebbazi Nassim</div>
+    <span class="toggle-abstract" onclick="toggleAbstract(this)">[abstract]</span>
+    <div class="abstract">
+      We study a semi-implicit scheme which can be applied to minimize objective functions which are decomposed as the sum of a quadratic term and of a nonlinear function, perturbed by noise. We exhibit modified deterministic and stochastic modified equations which are employed to analyze the convergence of the algorithm in terms of strong and weak error estimates. We compare the results with those obtained for a standard explicit stochastic gradient optimization scheme.
+    </div>
+  </li>
+
+  <li>
+    <div class="year">2025</div>
+    <div class="pub-title">
+      <a href="https://hal.science/LMA-PAU/hal-04962485v1" target="_blank">
+        Error analysis for stochastic gradient optimization schemes using modified equations
+      </a>
+    </div>
+    <div class="pub-authors">Bréhier Charles-Édouard, Dambrine Marc et En-Nebbazi Nassim</div>
+    <span class="toggle-abstract" onclick="toggleAbstract(this)">[abstract]</span>
+    <div class="abstract">
+      We consider a class of stochastic gradient optimization schemes. Assuming that the objective function is strongly convex, we prove weak error estimates which are uniform in time for the error between the solution of the numerical scheme, and the solutions of continuous-time modified (or high-resolution) differential equations at first and second orders, with respect to the time-step size. At first order, the modified equation is deterministic, whereas at second order the modified equation is stochastic and depends on a modified objective function. We go beyond existing results where the error estimates have been considered only on finite time intervals and were not uniform in time. This allows us to then provide a rigorous complexity analysis of the method in the large time and small time-step size regimes. We provide numerical experiments to illustrate the convergence results.
+    </div>
+  </li>
+</ul>
+
+<h2>Articles en préparation</h2>
+
+<ul class="pub-list">
+  <li>
+    <div class="pub-status">(En préparation)</div>
+    <div class="pub-title">
+      Second order modified equations and error analysis for stochastic Heavy–Ball schemes
+    </div>
+    <div class="pub-authors">En-Nebbazi Nassim</div>
+  </li>
+
+  <li>
+    <div class="pub-status">(En préparation)</div>
+    <div class="pub-title">
+      Error analysis for stochastic PDE schemes using modified equations
+    </div>
+    <div class="pub-authors">En-Nebbazi Nassim, Urbonas Matas</div>
+  </li>
+</ul>
 
 <footer>
-  © <span id="year"></span> Nassim En-Nebbazi — Doctorant en mathématiques
+  Dernière mise à jour : décembre 2024
 </footer>
 
 <script>
-  document.getElementById('year').textContent = new Date().getFullYear();
+  function toggleAbstract(el) {
+    const abstract = el.nextElementSibling;
+    if (abstract.style.display === 'block') {
+      abstract.style.display = 'none';
+      el.textContent = '[abstract]';
+    } else {
+      abstract.style.display = 'block';
+      el.textContent = '[hide abstract]';
+    }
+  }
 </script>
+
 </body>
 </html>

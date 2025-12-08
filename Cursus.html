@@ -1,288 +1,183 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="fr">
 <head>
-<meta charset="utf-8" />
-<meta name="viewport" content="width=device-width,initial-scale=1" />
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Cursus — Nassim En-Nebbazi</title>
 <style>
   * {
-    box-sizing: border-box;
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
   }
-  
+
   body {
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 14pt;
     line-height: 1.6;
-    color: #2c3e50;
-    background: #f8f9fa;
+    color: #000;
+    background: #fff;
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 40px 20px;
   }
-  
-  header {
-    background: linear-gradient(135deg, #155a9a 0%, #1e7bc4 100%);
-    color: #fff;
-    padding: 60px 20px 40px;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-    text-align: center;
+
+  h1 {
+    font-size: 28pt;
+    font-weight: normal;
+    margin-bottom: 5px;
   }
-  
-  header h1 {
-    font-size: 2.5rem;
-    margin-bottom: 8px;
-    font-weight: 700;
+
+  .subtitle {
+    font-size: 16pt;
+    font-style: italic;
+    margin-bottom: 20px;
+    color: #333;
   }
-  
-  header .subtitle {
-    font-size: 1.2rem;
-    opacity: 0.95;
-    font-weight: 300;
-  }
-  
+
   nav {
-    margin-top: 30px;
-    padding-top: 20px;
-    border-top: 1px solid rgba(255,255,255,0.2);
+    margin: 30px 0;
+    padding: 15px 0;
+    border-top: 1px solid #000;
+    border-bottom: 1px solid #000;
   }
-  
+
   nav a {
-    color: #fff;
+    color: #00e;
     text-decoration: none;
-    margin: 0 16px;
-    font-weight: 500;
-    font-size: 1rem;
-    padding: 8px 12px;
-    border-radius: 6px;
-    transition: all 0.3s ease;
-    display: inline-block;
+    margin-right: 20px;
   }
-  
+
+  nav a:visited {
+    color: #551a8b;
+  }
+
   nav a:hover {
-    background: rgba(255,255,255,0.15);
-    transform: translateY(-2px);
-  }
-  
-  main {
-    max-width: 1100px;
-    margin: 40px auto;
-    padding: 0 20px;
-  }
-  
-  .content-card {
-    background: #fff;
-    border-radius: 12px;
-    padding: 40px;
-    margin-bottom: 30px;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
-    transition: box-shadow 0.3s ease;
-  }
-  
-  .content-card:hover {
-    box-shadow: 0 4px 16px rgba(0,0,0,0.12);
-  }
-  
-  h2 {
-    color: #155a9a;
-    font-size: 1.8rem;
-    margin-bottom: 35px;
-    padding-bottom: 12px;
-    border-bottom: 3px solid #e8f0f7;
-    font-weight: 600;
-  }
-  
-  table {
-    width: 100%;
-    border-collapse: separate;
-    border-spacing: 0 16px;
-  }
-  
-  tr {
-    background: #fff;
-    transition: all 0.3s ease;
-  }
-  
-  tr:hover {
-    background: #f8fafc;
-  }
-  
-  td {
-    padding: 20px;
-    vertical-align: top;
-  }
-  
-  td:first-child {
-    width: 140px;
-    font-weight: 700;
-    color: #155a9a;
-    font-size: 0.95rem;
-    border-right: 3px solid #e8f0f7;
-  }
-  
-  .degree-title {
-    font-size: 1.15rem;
-    font-weight: 600;
-    color: #2c3e50;
-    margin-bottom: 8px;
-    line-height: 1.4;
-  }
-  
-  .degree-title a {
-    color: #155a9a;
-    text-decoration: none;
-    transition: color 0.2s ease;
-  }
-  
-  .degree-title a:hover {
-    color: #1e7bc4;
     text-decoration: underline;
   }
-  
-  .institution {
-    color: #64748b;
-    font-size: 0.95rem;
-    margin-bottom: 10px;
-  }
-  
-  .details {
-    margin-top: 12px;
-    padding-left: 20px;
-    color: #475569;
-    font-size: 0.95rem;
-  }
-  
-  .details ul {
-    list-style: none;
-    padding: 0;
-  }
-  
-  .details li {
-    position: relative;
-    padding-left: 16px;
-    margin-bottom: 6px;
-  }
-  
-  .details li::before {
-    content: '→';
-    position: absolute;
-    left: 0;
-    color: #155a9a;
-  }
-  
-  footer {
-    text-align: center;
-    color: #718096;
-    padding: 30px 20px;
-    font-size: 0.95rem;
-    border-top: 1px solid #e2e8f0;
-    background: #fff;
+
+  h2 {
+    font-size: 18pt;
+    font-weight: bold;
     margin-top: 40px;
+    margin-bottom: 15px;
   }
-  
-  @media (max-width: 768px) {
-    header h1 {
-      font-size: 2rem;
+
+  .timeline {
+    list-style: none;
+    padding-left: 0;
+  }
+
+  .timeline li {
+    margin-bottom: 25px;
+    padding-left: 0;
+  }
+
+  .year {
+    font-weight: bold;
+    margin-bottom: 5px;
+  }
+
+  .degree-title {
+    font-weight: bold;
+    margin-bottom: 5px;
+  }
+
+  .degree-title a {
+    color: #00e;
+    text-decoration: none;
+  }
+
+  .degree-title a:visited {
+    color: #551a8b;
+  }
+
+  .degree-title a:hover {
+    text-decoration: underline;
+  }
+
+  .institution {
+    font-style: italic;
+    margin-bottom: 5px;
+  }
+
+  .details {
+    margin-left: 20px;
+    margin-top: 5px;
+  }
+
+  .details li {
+    margin-bottom: 3px;
+  }
+
+  footer {
+    margin-top: 50px;
+    padding-top: 20px;
+    border-top: 1px solid #ccc;
+    font-size: 12pt;
+    color: #666;
+    text-align: center;
+  }
+
+  @media (max-width: 600px) {
+    body {
+      padding: 20px 15px;
     }
-    
+
+    h1 {
+      font-size: 24pt;
+    }
+
     nav a {
-      margin: 8px;
-      font-size: 0.95rem;
-    }
-    
-    .content-card {
-      padding: 24px;
-    }
-    
-    h2 {
-      font-size: 1.5rem;
-    }
-    
-    table {
-      border-spacing: 0 8px;
-    }
-    
-    tr {
-      display: block;
-      margin-bottom: 24px;
-      border: 1px solid #e8f0f7;
-      border-radius: 8px;
-      overflow: hidden;
-    }
-    
-    td {
-      display: block;
-      width: 100% !important;
-      padding: 16px;
-    }
-    
-    td:first-child {
-      border-right: none;
-      border-bottom: 2px solid #e8f0f7;
-      background: #f8fafc;
+      display: inline-block;
+      margin-bottom: 10px;
     }
   }
 </style>
 </head>
 <body>
-<header>
-  <h1>Nassim En-Nebbazi</h1>
-  <div class="subtitle">Doctorant en Mathématiques</div>
-  <nav>
-    <a href="index.html">Accueil</a>
-    <a href="Cursus.html">Cursus</a>
-    <a href="Publications.html">Publications</a>
-    <a href="Enseignement.html">Enseignement</a>
-    <a href="Divers.html">Divers</a>
-  </nav>
-</header>
 
-<main>
-  <section class="content-card">
-    <h2>Formation</h2>
-    
-    <table>
-      <tr>
-        <td>2023 – en cours</td>
-        <td>
-          <div class="degree-title">
-            Doctorat : <a href="https://theses.fr/s369176" target="_blank">Méthodes stochastiques pour l'optimisation numérique sous contraintes EDP</a>
-          </div>
-          <div class="institution">Université de Pau et des Pays de l'Adour</div>
-        </td>
-      </tr>
-      
-      <tr>
-        <td>2021 – 2023</td>
-        <td>
-          <div class="degree-title">
-            Master en mathématiques fondamentales en Probabilités
-          </div>
-          <div class="institution">Université Côte d'Azur</div>
-          <div class="details">
-            <ul>
-              <li>Option : Géométrie avancée (Variétés, Fibré vectoriel, Géométrie riemannienne)</li>
-            </ul>
-          </div>
-        </td>
-      </tr>
-      
-      <tr>
-        <td>2021 – 2023</td>
-        <td>
-          <div class="degree-title">
-            Master en ingénierie mathématique appliquée en Data Science
-          </div>
-          <div class="institution">Université Côte d'Azur</div>
-        </td>
-      </tr>
-    </table>
-  </section>
-</main>
+<h1>Nassim En-Nebbazi</h1>
+<div class="subtitle">Doctorant en Mathématiques</div>
+
+<nav>
+  <a href="index.html">Accueil</a>
+  <a href="Cursus.html">Cursus</a>
+  <a href="Publications.html">Publications</a>
+  <a href="Enseignement.html">Enseignement</a>
+  <a href="Divers.html">Divers</a>
+</nav>
+
+<h2>Formation</h2>
+
+<ul class="timeline">
+  <li>
+    <div class="year">2023 – présent</div>
+    <div class="degree-title">
+      Doctorat : <a href="https://theses.fr/s369176">Méthodes stochastiques pour l'optimisation numérique sous contraintes EDP</a>
+    </div>
+    <div class="institution">Université de Pau et des Pays de l'Adour</div>
+  </li>
+
+  <li>
+    <div class="year">2021 – 2023</div>
+    <div class="degree-title">Master en mathématiques fondamentales, Probabilités</div>
+    <div class="institution">Université Côte d'Azur</div>
+    <ul class="details">
+      <li>Option : Géométrie avancée (Variétés, Fibré vectoriel, Géométrie riemannienne)</li>
+    </ul>
+  </li>
+
+  <li>
+    <div class="year">2021 – 2023</div>
+    <div class="degree-title">Master en ingénierie mathématique appliquée, Data Science</div>
+    <div class="institution">Université Côte d'Azur</div>
+  </li>
+</ul>
 
 <footer>
-  © <span id="year"></span> Nassim En-Nebbazi — Doctorant en mathématiques
+  Dernière mise à jour : décembre 2024
 </footer>
 
-<script>
-  document.getElementById('year').textContent = new Date().getFullYear();
-</script>
 </body>
 </html>

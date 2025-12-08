@@ -1,302 +1,213 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="fr">
 <head>
-<meta charset="utf-8" />
-<meta name="viewport" content="width=device-width,initial-scale=1" />
-<title>Nassim En-Nebbazi — Doctorant en Mathématiques</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Nassim En-Nebbazi</title>
 <style>
   * {
-    box-sizing: border-box;
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
   }
-  
+
   body {
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 14pt;
     line-height: 1.6;
-    color: #2c3e50;
-    background: #f8f9fa;
-  }
-  
-  header {
-    background: linear-gradient(135deg, #155a9a 0%, #1e7bc4 100%);
-    color: #fff;
-    padding: 60px 20px 40px;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-  }
-  
-  .header-content {
-    max-width: 1100px;
+    color: #000;
+    background: #fff;
+    max-width: 900px;
     margin: 0 auto;
-    display: flex;
-    align-items: center;
-    gap: 40px;
-    flex-wrap: wrap;
-    justify-content: center;
+    padding: 40px 20px;
   }
-  
-  .photo {
-    width: 140px;
-    height: 140px;
-    object-fit: cover;
-    border-radius: 50%;
-    border: 4px solid rgba(255,255,255,0.3);
-    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
-    background: #fff;
+
+  h1 {
+    font-size: 28pt;
+    font-weight: normal;
+    margin-bottom: 5px;
   }
-  
-  .header-text {
-    flex: 1;
-    min-width: 280px;
-    text-align: center;
-  }
-  
-  .header-text h1 {
-    font-size: 2.5rem;
-    margin-bottom: 8px;
-    font-weight: 700;
-  }
-  
-  .header-text .subtitle {
-    font-size: 1.2rem;
-    opacity: 0.95;
-    font-weight: 300;
-  }
-  
-  nav {
-    width: 100%;
-    margin-top: 30px;
-    text-align: center;
-    padding-top: 20px;
-    border-top: 1px solid rgba(255,255,255,0.2);
-  }
-  
-  nav a {
-    color: #fff;
-    text-decoration: none;
-    margin: 0 16px;
-    font-weight: 500;
-    font-size: 1rem;
-    padding: 8px 12px;
-    border-radius: 6px;
-    transition: all 0.3s ease;
-    display: inline-block;
-  }
-  
-  nav a:hover {
-    background: rgba(255,255,255,0.15);
-    transform: translateY(-2px);
-  }
-  
-  main {
-    max-width: 1100px;
-    margin: 40px auto;
-    padding: 0 20px;
-  }
-  
-  .content-card {
-    background: #fff;
-    border-radius: 12px;
-    padding: 40px;
-    margin-bottom: 30px;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
-    transition: box-shadow 0.3s ease;
-  }
-  
-  .content-card:hover {
-    box-shadow: 0 4px 16px rgba(0,0,0,0.12);
-  }
-  
-  h2 {
-    color: #155a9a;
-    font-size: 1.8rem;
+
+  .subtitle {
+    font-size: 16pt;
+    font-style: italic;
     margin-bottom: 20px;
-    padding-bottom: 12px;
-    border-bottom: 3px solid #e8f0f7;
-    font-weight: 600;
+    color: #333;
   }
-  
-  p {
-    margin-bottom: 16px;
-    color: #4a5568;
-    font-size: 1.05rem;
+
+  nav {
+    margin: 30px 0;
+    padding: 15px 0;
+    border-top: 1px solid #000;
+    border-bottom: 1px solid #000;
   }
-  
-  a {
-    color: #155a9a;
+
+  nav a {
+    color: #00e;
     text-decoration: none;
-    transition: color 0.2s ease;
-    font-weight: 500;
+    margin-right: 20px;
   }
-  
-  a:hover {
-    color: #1e7bc4;
+
+  nav a:visited {
+    color: #551a8b;
+  }
+
+  nav a:hover {
     text-decoration: underline;
   }
-  
-  ul {
-    margin-left: 24px;
-    margin-top: 16px;
-  }
-  
-  ul li {
-    margin-bottom: 12px;
-    color: #4a5568;
-    line-height: 1.7;
-  }
-  
-  .cv-link {
-    display: inline-block;
-    padding: 12px 24px;
-    background: #155a9a;
-    color: #fff !important;
-    border-radius: 8px;
-    font-weight: 600;
-    text-decoration: none;
-    margin-top: 12px;
-    transition: all 0.3s ease;
-    box-shadow: 0 2px 6px rgba(21,90,154,0.3);
-  }
-  
-  .cv-link:hover {
-    background: #1e7bc4;
-    transform: translateY(-2px);
-    box-shadow: 0 4px 12px rgba(21,90,154,0.4);
-    text-decoration: none;
-  }
-  
-  .contact-list {
-    list-style: none;
-    margin-left: 0;
-  }
-  
-  .contact-list li {
-    padding: 12px 0;
-    border-bottom: 1px solid #e8f0f7;
-    display: flex;
-    align-items: center;
-    gap: 12px;
-  }
-  
-  .contact-list li:last-child {
-    border-bottom: none;
-  }
-  
-  .contact-icon {
-    width: 24px;
-    height: 24px;
-    color: #155a9a;
-    flex-shrink: 0;
-  }
-  
-  footer {
-    text-align: center;
-    color: #718096;
-    padding: 30px 20px;
-    font-size: 0.95rem;
-    border-top: 1px solid #e2e8f0;
-    background: #fff;
+
+  h2 {
+    font-size: 18pt;
+    font-weight: bold;
     margin-top: 40px;
+    margin-bottom: 15px;
   }
-  
-  @media (max-width: 768px) {
-    .header-content {
-      flex-direction: column;
-      text-align: center;
+
+  h3 {
+    font-size: 16pt;
+    font-weight: bold;
+    margin-top: 25px;
+    margin-bottom: 10px;
+  }
+
+  p {
+    margin-bottom: 15px;
+    text-align: justify;
+  }
+
+  ul {
+    margin-left: 30px;
+    margin-bottom: 15px;
+  }
+
+  li {
+    margin-bottom: 8px;
+  }
+
+  a {
+    color: #00e;
+    text-decoration: none;
+  }
+
+  a:visited {
+    color: #551a8b;
+  }
+
+  a:hover {
+    text-decoration: underline;
+  }
+
+  .contact {
+    margin-top: 30px;
+  }
+
+  hr {
+    border: none;
+    border-top: 1px solid #ccc;
+    margin: 30px 0;
+  }
+
+  footer {
+    margin-top: 50px;
+    padding-top: 20px;
+    border-top: 1px solid #ccc;
+    font-size: 12pt;
+    color: #666;
+    text-align: center;
+  }
+
+  .photo {
+    float: right;
+    width: 150px;
+    margin-left: 20px;
+    margin-bottom: 20px;
+    margin-top: -25px;
+  }
+
+  @media (max-width: 600px) {
+    body {
+      padding: 20px 15px;
     }
-    
-    .header-text h1 {
-      font-size: 2rem;
+
+    .photo {
+      float: none;
+      display: block;
+      margin: 0 auto 20px;
     }
-    
+
+    h1 {
+      font-size: 24pt;
+    }
+
     nav a {
-      margin: 8px;
-      font-size: 0.95rem;
-    }
-    
-    .content-card {
-      padding: 24px;
-    }
-    
-    h2 {
-      font-size: 1.5rem;
+      display: inline-block;
+      margin-bottom: 10px;
     }
   }
 </style>
 </head>
 <body>
-<header>
-  <div class="header-content">
-    <img src="Photo.png" alt="Photo de Nassim En-Nebbazi" class="photo">
-    <div class="header-text">
-      <h1>Nassim En-Nebbazi</h1>
-      <div class="subtitle">Doctorant en Mathématiques</div>
-    </div>
-  </div>
-  <nav>
-    <a href="index.html">Accueil</a>
-    <a href="Cursus.html">Cursus</a>
-    <a href="Publications.html">Publications</a>
-    <a href="Enseignement.html">Enseignement</a>
-    <a href="Divers.html">Divers</a>
-  </nav>
-</header>
 
-<main>
-  <section class="content-card">
-    <h2>À propos</h2>
-    <p>Doctorant en mathématiques au <a href="https://lma-umr5142.univ-pau.fr/fr/index.html" target="_blank">Laboratoire de Mathématiques et de leurs Applications de Pau</a> (LMAP) dans l'équipe <a href="https://lma-umr5142.univ-pau.fr/fr/organisation/equipes-de-recherche/analyse-geometrie-et-applications.html" target="_blank">Analyse, Géométrie et Applications</a>, sous la direction de <a href="https://brehier.pages.math.cnrs.fr/page-personnelle-c-e-brehier/recherche.html" target="_blank">Charles-Édouard Bréhier</a> et <a href="https://mdambrin.perso.univ-pau.fr/" target="_blank">Marc Dambrine</a>.</p>
-    <p><strong>Intérêts de recherche :</strong> Schémas numériques stochastiques, Équations différentielles stochastiques & Équations aux dérivées partielles stochastiques, Équations modifiées.</p>
-  </section>
-  
-  <section class="content-card">
-    <h2>Recherche</h2>
-    <p>Mes recherches portent sur les thématiques suivantes :</p>
-    <ul>
-      <li>Étude de schémas numériques pour les équations différentielles stochastiques et équations aux dérivées partielles stochastiques (appliquées à l'optimisation) : Analyse d'erreur en temps long.</li>
-      <li>Étude asymptotique d'équations différentielles stochastiques modifiées et équations aux dérivées partielles stochastiques modifiées.</li>
-      <li>Analyse des équations de Kolmogorov en dimension finie et infinie pour l'analyse d'erreur faible.</li>
-    </ul>
-  </section>
+<img src="Photo.png" alt="Nassim En-Nebbazi" class="photo">
 
-  <section class="content-card">
-    <h2>Curriculum Vitae</h2>
-    <p>Vous pouvez consulter mon CV complet en cliquant sur le lien ci-dessous :</p>
-    <a href="CV for Researchers.pdf" target="_blank" class="cv-link">Télécharger mon CV</a>
-  </section>
-  
-  <section class="content-card">
-    <h2>Contact</h2>
-    <ul class="contact-list">
-      <li>
-        <svg class="contact-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
-        </svg>
-        <span><strong>Email :</strong> <a href="mailto:nassim.en-nebbazi@univ-pau.fr">nassim.en-nebbazi@univ-pau.fr</a></span>
-      </li>
-      <li>
-        <svg class="contact-icon" fill="currentColor" viewBox="0 0 24 24">
-          <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"></path>
-        </svg>
-        <span><strong>LinkedIn :</strong> <a href="https://www.linkedin.com/in/nassim-en-nebbazi-a0b400244/" target="_blank">Nassim En-Nebbazi</a></span>
-      </li>
-      <li>
-        <svg class="contact-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path>
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path>
-        </svg>
-        <span><strong></strong> Bâtiment IPRA 2, Bureau 120 - Université de Pau et des Pays de l'Adour</span>
-      </li>
-    </ul>
-  </section>
-</main>
+<h1>Nassim En-Nebbazi</h1>
+<div class="subtitle">Doctorant en Mathématiques</div>
+
+<nav>
+  <a href="index.html">Accueil</a>
+  <a href="Cursus.html">Cursus</a>
+  <a href="Publications.html">Publications</a>
+  <a href="Enseignement.html">Enseignement</a>
+  <a href="Divers.html">Divers</a>
+</nav>
+
+<section id="about">
+  <p>
+    Je suis doctorant en mathématiques au <a href="https://lma-umr5142.univ-pau.fr/fr/index.html">Laboratoire de Mathématiques et de leurs Applications de Pau</a> (LMAP), dans l'équipe Analyse, Géométrie et Applications.
+  </p>
+  <p>
+    Ma thèse est dirigée par <a href="https://brehier.pages.math.cnrs.fr/page-personnelle-c-e-brehier/recherche.html">Charles-Édouard Bréhier</a> et <a href="https://mdambrin.perso.univ-pau.fr/">Marc Dambrine</a>.
+  </p>
+  <p>
+    <strong>Intérêts de recherche :</strong> Schémas numériques stochastiques, Équations différentielles stochastiques, Équations aux dérivées partielles stochastiques, Équations modifiées.
+  </p>
+</section>
+
+<h2 id="research">Recherche</h2>
+
+<p>
+  Mes travaux portent sur l'étude de schémas numériques pour les équations différentielles stochastiques et équations aux dérivées partielles stochastiques (analyse d'erreur en temps long).
+</p>
+<p>
+  Je m'intéresse également à l'étude asymptotique d'équations différentielles stochastiques modifiées et équations aux dérivées partielles stochastiques modifiées.
+</p>
+<p>
+  Enfin, j'étudie l'analyse des équations de Kolmogorov en dimension finie et infinie pour l'analyse d'erreur faible.
+</p>
+
+<h2 id="contact">Contact</h2>
+
+<div class="contact">
+  <p>
+    <strong>Email :</strong> <a href="mailto:nassim.en-nebbazi@univ-pau.fr">nassim.en-nebbazi@univ-pau.fr</a>
+  </p>
+  <p>
+    <strong>Bureau :</strong> Bâtiment IPRA 2, Bureau 120<br>
+    Université de Pau et des Pays de l'Adour
+  </p>
+  <p>
+    <strong>CV :</strong> 
+    <a href="CV_French.pdf">[PDF français]</a> 
+    <a href="CV_English.pdf">[PDF english]</a>
+  </p>
+  <p>
+    <strong>LinkedIn :</strong> <a href="https://www.linkedin.com/in/nassim-en-nebbazi-a0b400244/">Profil</a>
+  </p>
+</div>
 
 <footer>
-  © <span id="year"></span> Nassim En-Nebbazi — Doctorant en mathématiques
+  Dernière mise à jour : décembre 2024
 </footer>
 
-<script>
-  document.getElementById('year').textContent = new Date().getFullYear();
-</script>
 </body>
 </html>
