@@ -133,12 +133,37 @@
       margin-bottom: 10px;
     }
   }
+
+  /* Effet machine à écrire du sous-titre */
+  .subtitle {
+    min-height: 1.6em; /* évite que la page « saute » quand le texte est vide */
+  }
+
+  .cursor {
+    display: inline-block;
+    width: 2px;
+    height: 1em;
+    background: #333;
+    margin-left: 2px;
+    vertical-align: text-bottom;
+    animation: blink 1s steps(1) infinite;
+  }
+
+  @keyframes blink {
+    50% { opacity: 0; }
+  }
+
+  @media (max-width: 600px) {
+    .subtitle {
+      min-height: 3.2em; /* le texte peut passer sur deux lignes sur mobile */
+    }
+  }
 </style>
 </head>
 <body>
 
 <h1>Nassim En-Nebbazi</h1>
-  <div class="subtitle"><span id="typed">PhD student in Mathematics</span><span class="cursor"></span></div>
+<div class="subtitle"><span id="typed">PhD student in Mathematics</span><span class="cursor"></span></div>
 
 <nav>
   <a href="index.html">Home</a>
@@ -178,6 +203,43 @@
 <footer>
   © Nassim En-Nebbazi — Université de Pau et des Pays de l’Adour
 </footer>
+
+<script>
+  // Effet machine à écrire du sous-titre
+  const phrases = [
+    "PhD student in Mathematics",
+    "Université de Pau et des Pays de l'Adour"
+  ];
+
+  const el = document.getElementById('typed');
+
+  // Respecte les utilisateurs qui ont désactivé les animations
+  if (el && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    let p = 0;                        // index de la phrase courante
+    let i = phrases[0].length;        // nombre de lettres affichées
+    let deleting = true;              // on part du texte déjà affiché : il s'efface d'abord
+
+    function tick() {
+      const full = phrases[p];
+      i += deleting ? -1 : 1;
+      el.textContent = full.slice(0, i);
+
+      let delay = deleting ? 40 : 80; // vitesse d'effacement / d'écriture (ms)
+
+      if (!deleting && i === full.length) {
+        delay = 2000;                 // pause quand la phrase est complète
+        deleting = true;
+      } else if (deleting && i === 0) {
+        deleting = false;
+        p = (p + 1) % phrases.length; // phrase suivante
+        delay = 400;                  // petite pause avant de réécrire
+      }
+      setTimeout(tick, delay);
+    }
+
+    setTimeout(tick, 2000);           // laisse le titre visible 2 s au chargement
+  }
+</script>
 
 </body>
 </html>
