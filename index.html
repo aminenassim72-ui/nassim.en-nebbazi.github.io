@@ -1,213 +1,35 @@
-<!DOCTYPE html>
-<html lang="fr">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Nassim En-Nebbazi</title>
-<style>
-  * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-  }
+<script>
+  const phrases = [
+    "PhD student in Mathematics",
+    "Université de Pau et des Pays de l'Adour"
+  ];
 
-  body {
-    font-family: 'Times New Roman', Times, serif;
-    font-size: 14pt;
-    line-height: 1.6;
-    color: #000;
-    background: #fff;
-    max-width: 900px;
-    margin: 0 auto;
-    padding: 40px 20px;
-  }
+  const el = document.getElementById('typed');
 
-  h1 {
-    font-size: 28pt;
-    font-weight: normal;
-    margin-bottom: 5px;
-  }
+  // Respecte les utilisateurs qui ont désactivé les animations
+  if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    let p = 0;                        // index de la phrase courante
+    let i = phrases[0].length;        // nombre de lettres affichées
+    let deleting = true;              // on part du texte déjà affiché : il s'efface d'abord
 
-  .subtitle {
-    font-size: 16pt;
-    font-style: italic;
-    margin-bottom: 20px;
-    color: #333;
-  }
+    function tick() {
+      const full = phrases[p];
+      i += deleting ? -1 : 1;
+      el.textContent = full.slice(0, i);
 
-  nav {
-    margin: 30px 0;
-    padding: 15px 0;
-    border-top: 1px solid #000;
-    border-bottom: 1px solid #000;
-  }
+      let delay = deleting ? 40 : 80; // vitesse d'effacement / d'écriture (ms)
 
-  nav a {
-    color: #00e;
-    text-decoration: none;
-    margin-right: 20px;
-  }
-
-  nav a:visited {
-    color: #551a8b;
-  }
-
-  nav a:hover {
-    text-decoration: underline;
-  }
-
-  h2 {
-    font-size: 18pt;
-    font-weight: bold;
-    margin-top: 40px;
-    margin-bottom: 15px;
-  }
-
-  h3 {
-    font-size: 16pt;
-    font-weight: bold;
-    margin-top: 25px;
-    margin-bottom: 10px;
-  }
-
-  p {
-    margin-bottom: 15px;
-    text-align: justify;
-  }
-
-  ul {
-    margin-left: 30px;
-    margin-bottom: 15px;
-  }
-
-  li {
-    margin-bottom: 8px;
-  }
-
-  a {
-    color: #00e;
-    text-decoration: none;
-  }
-
-  a:visited {
-    color: #551a8b;
-  }
-
-  a:hover {
-    text-decoration: underline;
-  }
-
-  .contact {
-    margin-top: 30px;
-  }
-
-  hr {
-    border: none;
-    border-top: 1px solid #ccc;
-    margin: 30px 0;
-  }
-
-  footer {
-    margin-top: 50px;
-    padding-top: 20px;
-    border-top: 1px solid #ccc;
-    font-size: 12pt;
-    color: #666;
-    text-align: center;
-  }
-
-  .photo {
-    float: right;
-    width: 150px;
-    margin-left: 20px;
-    margin-bottom: 20px;
-    margin-top: -25px;
-  }
-
-  @media (max-width: 600px) {
-    body {
-      padding: 20px 15px;
+      if (!deleting && i === full.length) {
+        delay = 2000;                 // pause quand la phrase est complète
+        deleting = true;
+      } else if (deleting && i === 0) {
+        deleting = false;
+        p = (p + 1) % phrases.length; // phrase suivante
+        delay = 400;                  // petite pause avant de réécrire
+      }
+      setTimeout(tick, delay);
     }
 
-    .photo {
-      float: none;
-      display: block;
-      margin: 0 auto 20px;
-    }
-
-    h1 {
-      font-size: 24pt;
-    }
-
-    nav a {
-      display: inline-block;
-      margin-bottom: 10px;
-    }
+    setTimeout(tick, 2000);           // laisse le titre visible 2 s au chargement
   }
-</style>
-</head>
-<body>
-
-<img src="Photo.png" alt="Nassim En-Nebbazi" class="photo">
-
-<h1>Nassim En-Nebbazi</h1>
-<div class="subtitle">PhD student in Mathematics</div>
-
-<nav>
-  <a href="index.html">Home</a>
-  <a href="Cursus.html">Education</a>
-  <a href="Publications.html">Publications</a>
-  <a href="Enseignement.html">Teaching</a>
-  <a href="Divers.html">More</a>
-</nav>
-
-<section id="about">
-  <p>
-    I am a doctoral student in mathematics at <a href="https://lma-umr5142.univ-pau.fr/fr/index.html">Laboratory of Mathematics and their Applications in Pau</a> (LMAP), in the Analysis, Geometry, and Applications team.
-  </p>
-  <p>
-    My thesis is supervised by <a href="https://brehier.pages.math.cnrs.fr/page-personnelle-c-e-brehier/recherche.html">Charles-Édouard Bréhier</a> and <a href="https://mdambrin.perso.univ-pau.fr/">Marc Dambrine</a>.
-  </p>
-  <p>
-    <strong>Research interests :</strong> Stochastic numerical schemes, Stochastic differential equations, Stochastic partial differential equations, Modified equations.
-  </p>
-</section>
-
-<h2 id="research">Research</h2>
-
-<p>
-  My work focuses on the study of numerical schemes for stochastic differential equations and stochastic partial differential equations (long-time error analysis).
-</p>
-<p>
- I am also interested in the asymptotic study of modified stochastic differential equations and modified stochastic partial differential equations.
-</p>
-<p>
-  Finally, I am studying the analysis of Kolmogorov equations in finite and infinite dimensions for weak error analysis.
-</p>
-
-<h2 id="contact">Contact</h2>
-
-<div class="contact">
-  <p>
-    <strong>Email :</strong> <a href="mailto:nassim.en-nebbazi@univ-pau.fr">nassim.en-nebbazi@univ-pau.fr</a>
-  </p>
-  <p>
-    <strong>Office :</strong> Bâtiment IPRA 2, Bureau 122<br>
-    Université de Pau et des Pays de l'Adour
-  </p>
-  <p>
-    <strong>CV :</strong> 
-    <a href="CV_French.pdf">[PDF french]</a> 
-    <a href="CV_English.pdf">[PDF english]</a>
-  </p>
-  <p>
-    <strong>LinkedIn :</strong> <a href="https://www.linkedin.com/in/nassim-en-nebbazi-a0b400244/">Profil</a>
-  </p>
-</div>
-
-<footer>
-  © Nassim En-Nebbazi — Université de Pau et des Pays de l’Adour
-</footer>
-
-</body>
-</html>
+</script>
