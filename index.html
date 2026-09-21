@@ -33,25 +33,12 @@
     font-style: italic;
     margin-bottom: 20px;
     color: #333;
-    min-height: 1.6em; /* évite que la page « saute » quand le texte est vide */
   }
 
-  .cursor {
-    display: inline-block;
-    width: 2px;
-    height: 1em;
-    background: #333;
-    margin-left: 2px;
-    vertical-align: text-bottom;
-    animation: blink 1s steps(1) infinite;
-  }
 
-  @keyframes blink {
-    50% { opacity: 0; }
-  }
- .new {
-  color: #d00;
-  font-weight: bold;
+  .new {
+    color: #d00;
+    font-weight: bold;
   }
 
   nav {
@@ -158,13 +145,34 @@
       font-size: 24pt;
     }
 
-    .subtitle {
-      min-height: 3.2em; /* le texte peut passer sur deux lignes sur mobile */
-    }
-
     nav a {
       display: inline-block;
       margin-bottom: 10px;
+    }
+  }
+
+  /* Effet machine à écrire du sous-titre (partagé par toutes les pages) */
+  .subtitle {
+    min-height: 1.6em; /* évite que la page « saute » quand le texte est vide */
+  }
+
+  .cursor {
+    display: inline-block;
+    width: 2px;
+    height: 1em;
+    background: #333;
+    margin-left: 2px;
+    vertical-align: text-bottom;
+    animation: blink 1s steps(1) infinite;
+  }
+
+  @keyframes blink {
+    50% { opacity: 0; }
+  }
+
+  @media (max-width: 600px) {
+    .subtitle {
+      min-height: 3.2em; /* le texte peut passer sur deux lignes sur mobile */
     }
   }
 </style>
@@ -185,9 +193,9 @@
 </nav>
 
 <section id="about">
- <p>
-  <span class="new">New :</span> I will start a postdoc at ENS Rennes / Inria Rennes with <a href="https://adrienlaurent.net/">Adrien Busnot Laurent</a> in the MINGuS team.
-</p>
+  <p>
+    <span class="new">New :</span> I will start a postdoc at ENS Rennes / Inria Rennes with <a href="https://adrienlaurent.net/">Adrien Busnot Laurent</a> in the MINGuS team.
+  </p>
   <p>
     I am a doctoral student in mathematics at <a href="https://lma-umr5142.univ-pau.fr/fr/index.html">Laboratory of Mathematics and their Applications in Pau</a> (LMAP), in the Analysis, Geometry, and Applications team.
   </p>
@@ -235,7 +243,42 @@
   © Nassim En-Nebbazi — Université de Pau et des Pays de l’Adour
 </footer>
 
-<script src="typewriter.js"></script>
+<script>
+  // Effet machine à écrire du sous-titre (partagé par toutes les pages)
+  const phrases = [
+    "PhD student in Mathematics",
+    "Université de Pau et des Pays de l'Adour"
+  ];
+
+  const el = document.getElementById('typed');
+
+  // Respecte les utilisateurs qui ont désactivé les animations
+  if (el && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    let p = 0;                        // index de la phrase courante
+    let i = phrases[0].length;        // nombre de lettres affichées
+    let deleting = true;              // on part du texte déjà affiché : il s'efface d'abord
+
+    function tick() {
+      const full = phrases[p];
+      i += deleting ? -1 : 1;
+      el.textContent = full.slice(0, i);
+
+      let delay = deleting ? 40 : 80; // vitesse d'effacement / d'écriture (ms)
+
+      if (!deleting && i === full.length) {
+        delay = 2000;                 // pause quand la phrase est complète
+        deleting = true;
+      } else if (deleting && i === 0) {
+        deleting = false;
+        p = (p + 1) % phrases.length; // phrase suivante
+        delay = 400;                  // petite pause avant de réécrire
+      }
+      setTimeout(tick, delay);
+    }
+
+    setTimeout(tick, 2000);           // laisse le titre visible 2 s au chargement
+  }
+</script>
 
 </body>
 </html>
